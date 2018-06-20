@@ -1,0 +1,36 @@
+{
+  "name": "archdevutil",
+  "version": "0.0.2",
+  "description": "Architecode Utilities Library",
+  "main": "./index.js",
+  "typings": "./typings/index.d.ts",
+  "scripts": {
+    "build": "npm run cleanup && npm run build-ts",
+    "test": "npm run cleanup && npm run test-ts",
+    "test-cvr": "npm run cleanup && npm run test-cvr-ts",
+    "test-ts": "npm run build-ts && npm run test-all",
+    "test-cvr-ts": "npm run build-ts && npm run test-all-cvr",
+    "build-ts": "npm run tslint && tsc",
+    "tslint": "tslint -c tslint.json -p tsconfig.json",
+    "cleanup": "node _scripts/cleanup",
+    "aftertests": "node _scripts/aftertests",
+    "test-all": "npm run test-mocha",
+    "test-all-cvr": "npm run test-mocha-cvr",
+    "test-mocha": "mocha ./test/**/*.spec.js",
+    "test-mocha-cvr": "nyc mocha ./test/**/*.spec.js"
+  },
+  "author": "Architecode Corporation",
+  "license": "MIT",
+  "repository": "git+https://github.com/architecodev/archdevutil",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^10.3.4",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "nyc": "^12.0.2",
+    "shelljs": "^0.8.2",
+    "sinon": "^6.0.0",
+    "tslint": "^5.10.0",
+    "typescript": "^2.9.2"
+  }
+}

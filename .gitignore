@@ -1,0 +1,9 @@
+# Folders
+/.nyc_output
+/node_modules
+/typings
+
+# Built Library
+/chain.composer
+/index.js
+/index.js.map
